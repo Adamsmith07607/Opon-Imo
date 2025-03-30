@@ -12,6 +12,15 @@
             color: white;
             text-align: center;
         }
+        h1, h2, p {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: gold;
+        }
+        .intro-text {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
         .video-container {
             display: flex;
             justify-content: center;
@@ -26,7 +35,7 @@
             display: none;
         }
         .form-container {
-            max-width: 600px;
+            max-width: 500px; /* Set to match the max-width of the video */
             margin: auto;
             padding: 20px;
             border: 2px solid gold;
@@ -52,89 +61,4 @@
         .button-group {
             display: flex;
             justify-content: center;
-            margin-top: 15px;
-        }
-        button {
-            padding: 10px;
-            background-color: gold;
-            color: black;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: darkgoldenrod;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Video Selection Options -->
-    <h2>Select Your Language Version</h2>
-    <button onclick="showVideo('yoruba')">Click for Yoruba Version</button>
-    <button onclick="showVideo('english')">Click for English Version</button>
-
-    <!-- Videos -->
-    <div class="video-container">
-        <div id="videoYoruba">
-            <h3>Watch the Video in Yoruba</h3>
-            <video id="yorubaVideo" controls>
-                <source src="video2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-        <div id="videoEnglish">
-            <h3>Watch the Video in English</h3>
-            <video id="englishVideo" controls>
-                <source src="video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-
-    <!-- Form Section -->
-    <div class="form-container" id="formContainer">
-        <h3>Required Details for Divination</h3>
-        <label>Name:</label>
-        <input type="text" required>
-
-        <label>Age:</label>
-        <input type="number" required>
-
-        <label>Sex:</label>
-        <div class="checkbox-group">
-            <input type="radio" name="sex" value="Male"> Male
-            <input type="radio" name="sex" value="Female"> Female
-        </div>
-
-        <div class="button-group">
-            <button type="button">Submit</button>
-        </div>
-    </div>
-
-    <script>
-        function showVideo(language) {
-            // Hide both videos initially
-            document.getElementById('yorubaVideo').style.display = 'none';
-            document.getElementById('englishVideo').style.display = 'none';
-            
-            // Hide the form initially
-            document.getElementById('formContainer').style.display = 'none';
-
-            // Show the selected video and form
-            if (language === 'yoruba') {
-                document.getElementById('videoYoruba').style.display = 'block';
-                document.getElementById('yorubaVideo').style.display = 'block';
-            } else if (language === 'english') {
-                document.getElementById('videoEnglish').style.display = 'block';
-                document.getElementById('englishVideo').style.display = 'block';
-            }
-
-            // Show the form after video selection
-            document.getElementById('formContainer').style.display = 'block';
-        }
-    </script>
-
-</body>
-</html>
+            margin
