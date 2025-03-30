@@ -90,10 +90,10 @@
 
     <!-- Video Selection Options -->
     <h2>Select Your Language Version</h2>
-    <button onclick="showVideo('yoruba')">Click for Yoruba Version</button>
-    <button onclick="showVideo('english')">Click for English Version</button>
+    <button onclick="playVideo('yoruba')">Click for Yoruba Version</button>
+    <button onclick="playVideo('english')">Click for English Version</button>
 
-    <!-- Videos -->
+    <!-- Video Container -->
     <div class="video-container">
         <div id="videoYoruba">
             <h3>Watch the Video in Yoruba</h3>
@@ -134,23 +134,28 @@
     </div>
 
     <script>
-        function showVideo(language) {
-            // Hide both videos initially
-            document.getElementById('yorubaVideo').style.display = 'none';
-            document.getElementById('englishVideo').style.display = 'none';
-            
-            // Hide the form initially
-            document.getElementById('formContainer').style.display = 'none';
+        var currentlyPlaying = null;  // Keeps track of which video is currently playing
 
-            // Show the selected video and play it
+        function playVideo(language) {
+            // Hide both videos initially
+            document.getElementById('yorubaVideo').pause();  // Pause Yoruba video if playing
+            document.getElementById('englishVideo').pause();  // Pause English video if playing
+            document.getElementById('yorubaVideo').currentTime = 0;  // Reset Yoruba video to start
+            document.getElementById('englishVideo').currentTime = 0;  // Reset English video to start
+
+            // Hide both video divs initially
+            document.getElementById('videoYoruba').style.display = 'none';
+            document.getElementById('videoEnglish').style.display = 'none';
+
+            // Show and play the selected video
             if (language === 'yoruba') {
                 document.getElementById('videoYoruba').style.display = 'block';
                 document.getElementById('yorubaVideo').style.display = 'block';
-                document.getElementById('yorubaVideo').play(); // Play the Yoruba video automatically
+                document.getElementById('yorubaVideo').play();
             } else if (language === 'english') {
                 document.getElementById('videoEnglish').style.display = 'block';
                 document.getElementById('englishVideo').style.display = 'block';
-                document.getElementById('englishVideo').play(); // Play the English video automatically
+                document.getElementById('englishVideo').play();
             }
 
             // Show the form after video selection
