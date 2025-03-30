@@ -12,14 +12,15 @@
             color: white;
             text-align: center;
         }
-        h1, h2, p {
+        .welcome-text {
             font-family: 'Georgia', serif;
-            font-style: italic;
-            color: gold;
-        }
-        .intro-text {
-            font-size: 1.5em;
+            font-size: 24px;
+            font-weight: bold;
             margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Match background with video */
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
         .video-container {
             display: flex;
@@ -61,4 +62,97 @@
         .button-group {
             display: flex;
             justify-content: center;
-            margin
+            margin-top: 15px;
+        }
+        button {
+            padding: 10px;
+            background-color: gold;
+            color: black;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgoldenrod;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Text -->
+    <div class="welcome-text">
+        <h2>Welcome to Your Personal Divination & Comic Reading Portal!</h2>
+        <p>Step into the world of mystical insight and imaginative storytelling. Here, you can explore divination techniques or enjoy a unique comic experience, all guided by the power of numbers.</p>
+        <p><strong>Divination with Selection Numbers</strong></p>
+        <p>Unlock the secrets of the universe by selecting numbers that resonate with you. Each number holds a unique meaning and can offer guidance, wisdom, and clarity in your life journey. Choose your number, and let the divination process reveal your path forward.</p>
+    </div>
+
+    <!-- Video Selection Options -->
+    <h2>Select Your Language Version</h2>
+    <button onclick="showVideo('yoruba')">Click for Yoruba Version</button>
+    <button onclick="showVideo('english')">Click for English Version</button>
+
+    <!-- Videos -->
+    <div class="video-container">
+        <div id="videoYoruba">
+            <h3>Watch the Video in Yoruba</h3>
+            <video id="yorubaVideo" controls>
+                <source src="video2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div id="videoEnglish">
+            <h3>Watch the Video in English</h3>
+            <video id="englishVideo" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container" id="formContainer">
+        <h3>Form</h3>
+        <label>Name:</label>
+        <input type="text" required>
+
+        <label>Age:</label>
+        <input type="number" required>
+
+        <label>Sex:</label>
+        <div class="checkbox-group">
+            <input type="radio" name="sex" value="Male"> Male
+            <input type="radio" name="sex" value="Female"> Female
+        </div>
+
+        <div class="button-group">
+            <button type="button">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        function showVideo(language) {
+            // Hide both videos initially
+            document.getElementById('yorubaVideo').style.display = 'none';
+            document.getElementById('englishVideo').style.display = 'none';
+            
+            // Hide the form initially
+            document.getElementById('formContainer').style.display = 'none';
+
+            // Show the selected video and form
+            if (language === 'yoruba') {
+                document.getElementById('videoYoruba').style.display = 'block';
+                document.getElementById('yorubaVideo').style.display = 'block';
+            } else if (language === 'english') {
+                document.getElementById('videoEnglish').style.display = 'block';
+                document.getElementById('englishVideo').style.display = 'block';
+            }
+
+            // Show the form after video selection
+            document.getElementById('formContainer').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
