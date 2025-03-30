@@ -114,7 +114,7 @@
     <!-- Form Section -->
     <div class="form-container" id="formContainer">
         <h3>Form</h3>
-        <form action="https://formspree.io/f/mjkyejew" method="POST">
+        <form action="https://formspree.io/f/maykqgzn" method="POST">
             <label>Name:</label>
             <input type="text" name="name" required>
 
@@ -142,13 +142,15 @@
             // Hide the form initially
             document.getElementById('formContainer').style.display = 'none';
 
-            // Show the selected video and form
+            // Show the selected video and play it
             if (language === 'yoruba') {
                 document.getElementById('videoYoruba').style.display = 'block';
                 document.getElementById('yorubaVideo').style.display = 'block';
+                document.getElementById('yorubaVideo').play(); // Play the Yoruba video automatically
             } else if (language === 'english') {
                 document.getElementById('videoEnglish').style.display = 'block';
                 document.getElementById('englishVideo').style.display = 'block';
+                document.getElementById('englishVideo').play(); // Play the English video automatically
             }
 
             // Show the form after video selection
