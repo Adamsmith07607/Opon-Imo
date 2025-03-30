@@ -114,21 +114,23 @@
     <!-- Form Section -->
     <div class="form-container" id="formContainer">
         <h3>Form</h3>
-        <label>Name:</label>
-        <input type="text" required>
+        <form action="https://formspree.io/f/mjkyejew" method="POST">
+            <label>Name:</label>
+            <input type="text" name="name" required>
 
-        <label>Age:</label>
-        <input type="number" required>
+            <label>Age:</label>
+            <input type="number" name="age" required>
 
-        <label>Sex:</label>
-        <div class="checkbox-group">
-            <input type="radio" name="sex" value="Male"> Male
-            <input type="radio" name="sex" value="Female"> Female
-        </div>
+            <label>Sex:</label>
+            <div class="checkbox-group">
+                <input type="radio" name="sex" value="Male" required> Male
+                <input type="radio" name="sex" value="Female" required> Female
+            </div>
 
-        <div class="button-group">
-            <button type="button">Submit</button>
-        </div>
+            <div class="button-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
     </div>
 
     <script>
